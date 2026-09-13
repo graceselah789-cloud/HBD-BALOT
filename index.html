@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Nurse Selah! ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- STEP 1: UNLOCK DATE GATE -->
+  <div class="card" id="unlockCard">
+    <div class="icon-header">🔒</div>
+    <h2>Special Surprise</h2>
+    <p class="sub-text">Enter your birthdate to unlock your gift 🎁</p>
+    
+    <label class="label-text">Your Birthdate</label>
+    <input type="date" id="birthdateInput" class="input-date" />
+
+    <button class="btn-primary" onclick="unlockGift()">Unlock My Gift 💖</button>
+  </div>
+
+  <!-- STEP 2: CUPID HEART SHOOTING ANIMATION -->
+  <div class="card hidden heart-card" id="heartCard">
+    <h2>Shoot Cupid's Arrow! 💘</h2>
+    <p class="sub-text">Click the heart to shoot the arrow!</p>
+    
+    <div class="heart-stage" onclick="shootArrow()">
+      <div class="arrow-obj" id="arrowObj">🏹</div>
+      <div class="heart-obj" id="heartObj">❤️</div>
+    </div>
+
+    <button class="btn-primary hidden" id="nextToFlowerBtn" onclick="goToFlowerPage()">See Your Bouquet 💐➡️</button>
+  </div>
+
+  <!-- STEP 3: FLOWER BOUQUET SCREEN -->
+  <div class="card hidden flower-card" id="flowerCard">
+    <div class="bouquet-container">
+      <div class="flower-wrapper f1">
+        <div class="petal p1"></div><div class="petal p2"></div>
+        <div class="petal p3"></div><div class="petal p4"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="flower-wrapper f2">
+        <div class="petal p1"></div><div class="petal p2"></div>
+        <div class="petal p3"></div><div class="petal p4"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="flower-wrapper f3">
+        <div class="petal p1"></div><div class="petal p2"></div>
+        <div class="petal p3"></div><div class="petal p4"></div>
+        <div class="flower-center"></div>
+      </div>
+      <div class="bouquet-paper"></div>
+      <div class="bouquet-ribbon"></div>
+    </div>
+
+    <h1 class="birthday-title">HAPPY BIRTHDAY, SELAH! 🎉🎂</h1>
+    <p class="flower-sub">A special bouquet for my favorite Student Nurse! 💐✨</p>
+    
+    <button class="btn-primary" onclick="goToMainWebsite()">Click for your surprise ➡️</button>
+  </div>
+
+  <!-- STEP 4: MAIN WEBSITE -->
+  <div class="main-content hidden" id="mainWebsite">
+    
+    <!-- HEADER CARD -->
+    <div class="card header-card">
+      <div class="badge">🩺 RN 2029</div>
+      <h1>Happy Birthday, Selah! 🎉❤️</h1>
+      <p class="subtitle">To My Beautiful Future RN 👩‍⚕️✨</p>
+
+      <div class="cake-box">
+        <div class="cake-emoji" id="cakeIcon">🎂</div>
+        <h3>Make a Wish! ✨</h3>
+        <p>Blow the candle and make this year magical!</p>
+        <button class="btn-secondary" id="candleBtn" onclick="blowCandle()">🕯️ Blow the Candle</button>
+      </div>
+    </div>
+
+    <!-- MEMORIES GALLERY -->
+    <div class="card">
+      <h2>Super Ganda mo dito ohh 📸</h2>
+      <div class="photo-grid">
+        <div class="photo-card"><img src="pic1.jpg" alt="Memory 1"></div>
+        <div class="photo-card"><img src="pic2.jpg" alt="Memory 2"></div>
+        <div class="photo-card"><img src="pic3.jpg" alt="Memory 3"></div>
+      </div>
+    </div>
+
+    <!-- MESSAGE FOR YOU -->
+    <div class="card text-center">
+      <div class="heart-pulse">💌</div>
+      <button class="btn-primary" onclick="openLetter()">Open My Love Letter 💖</button>
+    </div>
+
+    <!-- RUNAWAY DATE PROPOSAL -->
+    <div class="card proposal-card" id="proposalCard">
+      <div class="badge"> (IKAW BAHALA SA DATE)</div>
+      <h2 id="questionText">Will you go on a date with me, Nurse Selah? 🥺🩺❤️</h2>
+      
+      <div class="btn-group">
+        <button id="yesBtn" class="btn-yes">Yes 🥰</button>
+        <button id="noBtn" class="btn-no">No 😜</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LOVE LETTER MODAL -->
+  <div class="modal-overlay hidden" id="letterModal">
+    <div class="modal-card">
+      <span class="close-btn" onclick="closeLetter()">&times;</span>
+      <h2>Happy Birthday, My Nurse Selah! 🩺💌</h2>
+      <p class="modal-body">
+        Happy Birthday, Selah!<br><br>
+        I know how hard you work as a student nurse—the sleepless nights, long duty hours, and endless requirements. Seeing your dedication makes me so proud of you every single day.<br><br>
+        May this new year of your life bring you answered prayers, peace, success in your studies, and all the happiness you deserve!<br><br>
+        Cheering for you always on your journey to becoming Nurse Selah, RN! 👩‍⚕️✨
+      </p>
+      <button class="btn-primary" onclick="closeLetter()">Close Letter 💖</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
